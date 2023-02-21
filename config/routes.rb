@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'books/index'
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -12,8 +13,8 @@ Rails.application.routes.draw do
   get '/signup' => 'user#new'
   post '/users' => 'user#create'
   
-  get '/' => 'user#index'
-
+  # get '/' => 'book#index'
+  root 'books#index'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
